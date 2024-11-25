@@ -1,0 +1,25 @@
+name: Python Hello World
+
+on:
+  push:
+    branches:
+      - main  # Runs on pushes to the main branch
+  pull_request:
+    branches:
+      - main  # Runs on pull requests to the main branch
+
+jobs:
+  run-python:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'  # Use the latest Python 3 version
+
+    - name: Run hello.py
+      run: python hello.py
