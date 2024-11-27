@@ -2,13 +2,13 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ubuntu/my-project1  # Destination on your EC2 instance
+    destination: /home/ubuntu/my-project1  # Where to copy the files on EC2
 hooks:
   AfterInstall:
-    - location: install/install_dependencies.sh  # Update path if needed
+    - location: install_dependencies.sh  # Or scripts/install_dependencies.sh if in a folder
       timeout: 300
       runas: root
   ApplicationStart:
-    - location: install/start_server.sh
+    - location: start_server.sh  # Or scripts/start_server.sh if in a folder
       timeout: 300
       runas: root
