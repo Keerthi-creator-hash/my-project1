@@ -8,6 +8,9 @@ hooks:
     - location: Scripts/install_dependencies.sh
       timeout: 300
       runas: root
+    - location: Scripts/create_directory.sh
+      timeout: 300
+      runas: root
   ApplicationStart:
     - location: Scripts/start_server.sh
       timeout: 300
